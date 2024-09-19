@@ -1,0 +1,385 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #121330;
+    color: #fff;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 0 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+header {
+    background-color: #1A1A3D;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    background-color: #1A1A3D;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+nav h1 a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+nav h1 a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f39c12;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.name {
+    color: #f39c12; /* Change to any color you prefer */
+    font-weight: bold;
+}
+
+/* Enhanced styling for the introduction paragraph */
+.intro-description {
+    font-size: 1.4rem; /* Slightly larger font size */
+    font-weight: 300; /* Lighter font weight for a softer look */
+    line-height: 1.6; /* Improved line height for readability */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px; /* Add some space above */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for a subtle 3D effect */
+}
+
+#intro {
+    background-color: #121330;
+}
+
+.intro-text {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image img {
+    width: 50%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+#CV{
+    background-color: #0077b5;
+}
+
+
+#about-me, #skills{
+    display: grid;
+    background-color: #1A1A3D;
+    grid-template-columns: 1fr 2fr; /* 1 column for h2 and 2 columns for image */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh; /* Full viewport height */
+}
+
+#about-me h2, #skills h2 {
+    font-size: 4rem;
+    margin: 0; /* Remove margin to ensure no extra space */
+}
+
+.about-me-image, .skills-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally within its grid cell */
+    width: 85%;
+    height: 45%;
+}
+
+.about-me-image img, .skills-container .skills-category {
+    border-radius: 8px; /* Optional: Add rounded corners to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visual effect */
+    width: 100%;
+}
+
+#projects, #certificates {
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    height: 100vh; /* Full viewport height */
+
+}
+
+#projects h2, #certificates h2 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+}
+
+.projects-container, .certificates-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    justify-content: center;
+}
+
+.projects-wrapper, .certificates-wrapper {
+    overflow: hidden; /* Hide horizontal scroll bar */
+    width: 95%;
+}
+
+.projects-content, .certificates-content {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.project, .certificate {
+    flex: 0 0 auto; /* Prevent shrinking and set width to fit content */
+    width: 49%; /* Show only 2 projects at a time */
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #fffffff3;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+}
+
+.project img, .certificate img{
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project h3, .certificate h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #000;
+}
+
+.project a, .certificate a {
+    text-decoration: none;
+}
+
+.project p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.skills-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin: 0px;
+}
+
+.skills-category {
+    flex: 1 1 45%;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills-category h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1A1A3D;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.skill-grid span {
+    background-color: #0077b5;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    
+}
+
+
+.scroll-btn {
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+}
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Space between skill items */
+    margin-top: 10px;
+}
+
+.skills span {
+    background-color: #0077b5;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+
+.buttons a {
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#skills, #projects, #certificates, #contact {
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.certificate img{
+    height: 400px;
+}
+
+.buttons a:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+
+#contact-me {
+    text-align: center;
+    padding: 20px;
+    height: 30vh;
+    display: block;
+  }
+
+  #contact-me h2 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 50px;
+  }
+
+  .contact-icons a {
+    margin: 0 15px;
+    color: #e67e22;
+    text-decoration: none;
+    font-size: 2em;
+    transition: color 0.3s ease;
+    padding: 20px;
+  }
+
+  .contact-icons a:hover {
+    color: #0077b5; /* LinkedIn color for hover */
+  }
+
+  .contact-icons i {
+    transition: transform 0.3s ease;
+  }
+
+  .contact-icons a:hover i {
+    transform: scale(1.2);
+  }

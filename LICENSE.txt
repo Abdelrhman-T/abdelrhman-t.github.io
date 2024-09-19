@@ -1,0 +1,7 @@
+Custom License Agreement
+
+Copyright (c) 2024 Abdelrhman Tarek
+
+All rights to this code are reserved. You may not use, copy, modify, distribute, or create derivative works from this code without the express written permission of the author. 
+
+For permissions or inquiries, please contact abdelrhmantarek2002@gmail.com
