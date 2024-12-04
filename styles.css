@@ -5,8 +5,8 @@ html {
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: #121330;
-    color: #fff;
+    background-color: #1E1E1E;
+    color: #ffffff;
 }
 
 section {
@@ -19,7 +19,7 @@ section {
 }
 
 header {
-    background-color: #1A1A3D;
+    background-color: #1E1E1E;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -29,12 +29,19 @@ header {
 
 nav {
     width: 100%;
-    background-color: #1A1A3D;
-    padding: 10px 0;
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 15px 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+nav:hover {
+    background-color: rgba(30, 30, 30, 0.98);
 }
 
 nav .container {
@@ -49,15 +56,21 @@ nav .container {
 nav h1 {
     font-size: 1.8rem;
     margin: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 nav h1 a {
-    color: #f39c12;
+    color: #FF7262;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 nav h1 a:hover {
-    text-decoration: underline;
+    color: #FF8C7E;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 114, 98, 0.3);
 }
 
 nav ul {
@@ -65,21 +78,47 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    gap: 10px;
 }
 
 nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #f39c12;
-    font-size: 1.2rem;
+    color: #ffffff;
+    font-size: 1.1rem;
     font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 5px;
+    border-radius: 4px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FF7262;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #FF7262;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:active {
+    transform: scale(0.95);
 }
 
 .intro-content {
@@ -92,8 +131,27 @@ nav ul li a:hover {
 }
 
 .name {
-    color: #f39c12; /* Change to any color you prefer */
+    color: #FF7262;
+    text-shadow: 
+        0 0 1px #fff,
+        0 0 3px #FF7262;
+    animation: neon 1.5s ease-in-out infinite alternate;
     font-weight: bold;
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 
+            0 0 1px #fff,
+            0 0 3px #FF7262;
+    }
+    to {
+        text-shadow: 
+            0 0 1px #fff,
+            0 0 3px #FF7262;
+        filter: brightness(1.02);
+        transform: scale(1.001);
+    }
 }
 
 /* Enhanced styling for the introduction paragraph */
@@ -108,7 +166,7 @@ nav ul li a:hover {
 }
 
 #intro {
-    background-color: #121330;
+    background-color: #1E1E1E;
 }
 
 .intro-text {
@@ -139,13 +197,13 @@ p {
 }
 
 #CV{
-    background-color: #0077b5;
+    background-color: #ffffff;
+    color: #000;
 }
-
 
 #about-me, #skills{
     display: grid;
-    background-color: #1A1A3D;
+    background-color: #1E1E1E;
     grid-template-columns: 1fr 2fr; /* 1 column for h2 and 2 columns for image */
     align-items: center; /* Center items vertically */
     padding: 20px;
@@ -250,18 +308,19 @@ p {
 
 .skills-category {
     flex: 1 1 45%;
-    background-color: #fff;
-    color: #000;
+    background-color: #252525;
+    color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333333;
 }
 
 .skills-category h3 {
     font-size: 2rem;
     margin-bottom: 15px;
     text-align: center;
-    color: #1A1A3D;
+    color: #FF7262;
 }
 
 .skill-grid {
@@ -271,20 +330,19 @@ p {
 }
 
 .skill-grid span {
-    background-color: #0077b5;
-    color: #fff;
+    background-color: #252525;
+    color: #ffffff;
     padding: 10px;
     border-radius: 5px;
     font-size: 0.9rem;
     text-align: center;
-    
+    border: 1px solid #FF7262;
 }
 
-
 .scroll-btn {
-    background-color: #f39c12;
+    background-color: #1E1E1E;
     border: none;
-    color: white;
+    color: #ffffff;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
@@ -303,7 +361,6 @@ p {
     right: 0px;
 }
 
-
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -312,22 +369,27 @@ p {
 }
 
 .skills span {
-    background-color: #0077b5;
-    color: #fff;
+    background-color: #252525;
+    color: #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.9rem;
 }
 
-
 .buttons a {
     margin: 10px;
     padding: 15px 30px;
-    background-color: #f39c12;
-    color: white;
+    background-color: #FF7262;
+    color: #ffffff;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.buttons a:hover {
+    background-color: #FF8C7E;
+    transform: translateY(-2px);
 }
 
 #skills, #projects, #certificates, #contact {
@@ -335,51 +397,49 @@ p {
 }
 
 h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 40px;
+    color: #FF7262;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .certificate img{
     height: 400px;
 }
 
-.buttons a:hover {
-    background-color: #e67e22;
-    transform: scale(1.05);
-}
-
-
 #contact-me {
     text-align: center;
     padding: 20px;
     height: 30vh;
     display: block;
-  }
+}
 
-  #contact-me h2 {
+#contact-me h2 {
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
     margin-bottom: 50px;
-  }
+}
 
-  .contact-icons a {
+.contact-icons a {
     margin: 0 15px;
-    color: #e67e22;
+    color: #FF7262;
     text-decoration: none;
     font-size: 2em;
-    transition: color 0.3s ease;
-    padding: 20px;
-  }
+    transition: all 0.3s ease;
+}
 
-  .contact-icons a:hover {
-    color: #0077b5; /* LinkedIn color for hover */
-  }
+.contact-icons a:hover {
+    color: #FF8C7E;
+    transform: translateY(-2px);
+}
 
-  .contact-icons i {
+.contact-icons i {
     transition: transform 0.3s ease;
-  }
+}
 
-  .contact-icons a:hover i {
+.contact-icons a:hover i {
     transform: scale(1.2);
-  }
+}
+
+.accent-dot {
+    color: #00FFB2; /* Mint green accent color for special elements */
+}
