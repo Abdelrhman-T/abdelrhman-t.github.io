@@ -1,24 +1,73 @@
-# Welcome to My GitHub Pages Site
+# React + TypeScript + Vite
 
-This repository hosts the source code for my personal website on GitHub Pages.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-You can visit the site at [https://abdelrhman-t.github.io/](https://abdelrhman-t.github.io/).
+Currently, two official plugins are available:
 
-## About the Project
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This project contains the HTML, CSS, and JavaScript files that make up the content of my personal website. The site is designed to showcase my projects, portfolio, and other professional information.
+## React Compiler
 
-## Usage
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-To view the site, simply go to the link above.
+## Expanding the ESLint configuration
 
-Feel free to explore my GitHub repositories for more interesting projects!
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Contact
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-If you'd like to get in touch, you can contact me at:
-- **Email:** abdelrhmantarek2002@gmail.com
-- **LinkedIn:** [Abdelrhman Tarek]([https://www.linkedin.com/in/abdelrhman-tarek2002](https://www.linkedin.com/in/abdelrhman-tarek-mohamed/))
-- **GitHub:** [https://github.com/Abdelrhman-T](https://github.com/Abdelrhman-T)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Thank you for visiting!
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
