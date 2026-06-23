@@ -62,11 +62,11 @@ export const technicalSkills = {
 
 export const projects = [
   {
-    id: "soukai",
-    name: "SoukAI",
+    id: "arabcx",
+    name: "ArabCX",
     subtitle: "Arabic E-commerce Customer Support Triage Agent",
     date: "06/2026",
-    url: "https://github.com/Abdelrhman-T/SoukAI",
+    url: "https://github.com/Abdelrhman-T/ArabCX",
     tech: [
       "Python",
       "FastAPI",
@@ -88,7 +88,7 @@ export const projects = [
       "Created an evaluation pipeline with classification metrics, routing metrics, latency/cost tracking, trajectory logs, and rubric-based LLM-as-judge evaluation.",
       "Tested on 71 labeled examples, achieving a 73.24% response pass rate.",
     ],
-    image: "/projects/soukai.jpg",
+    image: "/projects/arabcx.jpg",
   },
   {
     id: "baseer",
